@@ -1,0 +1,30 @@
+# ---- Roman to Integer ---- #
+
+class Solution:
+    def romanToInt(self, s: str) -> int:
+       
+        numberDict = {
+            "M" : 1000,
+            "D" : 500,
+            "C" : 100,
+            "L" : 50,
+            "X" : 10,
+            "V" : 5,
+            "I" : 1,
+        }
+
+        total = 0
+        for i in range(len(s)):
+            if (i+1) < len(s) and numberDict[s[i]] < numberDict[s[i+1]]:
+                 total -= numberDict[s[i]]
+
+            else:
+                total += numberDict[s[i]]
+        
+        return total
+
+
+
+
+solution = Solution()
+print(solution.romanToInt((input("Enter: "))))
