@@ -1,9 +1,17 @@
 # -- longest common prefix - #
 
-class Solution:
-    def longestCommonPrefix(self, strs: List[str]) -> str:
-        pass
+strs = ["flower","flow","flight"]
+
+def longestCommonPrefix(strs):
+    res = ""
+    for i in range(len(min(strs, key=len))):
+        for s in strs:
+            if s[i] != strs[0][i]:
+                return res
+        
+        res += strs[0][i]
+    return res
 
 
-solution = Solution()
-solution.longestCommonPrefix(["flower","flow","flight"])
+
+print(longestCommonPrefix(strs))
