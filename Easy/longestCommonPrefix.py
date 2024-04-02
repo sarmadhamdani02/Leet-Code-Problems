@@ -1,6 +1,6 @@
 # -- longest common prefix - #
 
-strs = ["flower","flow","flight"]
+strs = []
 
 def longestCommonPrefix(strs):
     res = ""
